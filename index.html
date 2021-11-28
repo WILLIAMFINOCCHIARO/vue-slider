@@ -17,6 +17,9 @@
       
       <div class="title"> <div>Svizzera</div> <div>Lorem Ipsum</div></div> -->
 
+      <!-- Vue Image -->
+      <img :src="images[currentImg]" alt="">
+
       
       
     </div>
@@ -27,17 +30,13 @@
      
     <div class="container-right">
       <div class="container-under-right" >
-        <!-- <div class="imag"></div>
-        <div class="imag"></div>
-        <div class="imag"></div>
-        <div class="imag"></div>SSSSS
-        <div class="imag"></div>  -->
-        <div class="imags" v-for= "immagine in images">
+         <!-- Vue class -->
+          <div class="imags" v-for= "(immagine, index) in images" :class= 'SetActive(index)' >
           <img :src="immagine" alt="">
         </div>
       </div>
-      <div class="arrow up"><i class="fas fa-chevron-up"></i></div>
-      <div class="arrow down"><i class="fas fa-chevron-down"></i></div> 
+      <div class="arrow up" @click = "prevImage()" ><i class="fas fa-chevron-up"></i></div>
+      <div class="arrow down" @click = "nextImage()"><i class="fas fa-chevron-down"></i></div> 
     </div>
     
   </div>
